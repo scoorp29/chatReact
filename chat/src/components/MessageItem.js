@@ -1,8 +1,15 @@
 import React from 'react';
+import Emoji from 'react-emoji-render';
+import styles from './styles/MessagesStyles';
 
-const MessageItem = ({message}) => {
+const MessageItem = ({username, message}) => {
     return (
-        <li>{ message }</li>
+            <li style={styles.li}>
+                <p
+                    style={styles.messageText}>{username} : <Emoji text={ message } />
+
+                </p>
+            </li>
     )
 };
 

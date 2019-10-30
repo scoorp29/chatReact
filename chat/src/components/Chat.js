@@ -1,15 +1,13 @@
 import React from 'react';
 import MessagesList from "./MessagesList";
 import MessageBar from "./MessageBar";
-import {connect} from 'react-redux';
-import {addMessage} from '../actions/messages'
-
-const ws = new WebSocket("ws://localhost:50000");
+import styles from './styles/ChatStyles';
+import Emoji from 'react-emoji-render';
 
 const Chat = () => {
     return (
         <div>
-            <h1>Chat</h1>
+            <h1 style={styles.title}><Emoji text={"MiChat 💬"}/></h1>
             <MessagesList/>
             <MessageBar/>
         </div>

@@ -1,19 +1,22 @@
-import {ADD_MESSAGE} from '../constants/ActionTypes';
+import {ADD_MESSAGE, ADD_USERNAME} from '../constants/ActionTypes';
 
-const INITIAL_STATE = [
+const INITIAL_STATE = {
+    username: null,
+    messages: [
         {
-            user: 'Bob',
-            messages: 'Pas de Message!'
-        },
-    ];
+            username: 'test',
+            messages: 'test'
+        }
+    ]
+};
 
 const messages = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case ADD_MESSAGE:
-            return {
-                ...state, user: action.user, messages: action.messages
-            };
-        default:
+            return { ...state, messages: [...state.messages, {username: action.username, messages: action.messages}] };
+        case ADD_USERNAME:
+            return { ...state, username: action.username }
+                default:
             return state;
     }
 }

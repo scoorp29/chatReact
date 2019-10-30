@@ -1,46 +1,27 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {addMessage} from "../actions/messages";
-import messages from "../reducers/messages";
+import styles from './styles/BarStyles';
 
-const MessageBar = (dispach) => {
+const MessageBar = ({addMessage})  => {
+
     return (
-        <div>
-
-
-            <form
-                action="."
+        <div >
+            <form id={"myForm"}
                 onSubmit={e => {
                     e.preventDefault();
-                    const username = document.getElementById("uniqueIdName").value
                     const message = document.getElementById("uniqueIdMessage").value;
-                    connectComponent(addMessage(username, message))
+                    addMessage("TODO", message);
+                    document.getElementById("myForm").reset();
                 }
                 }
             >
-                <label htmlFor="name">
-                    Name:&nbsp;
-                    <input type="text" id="uniqueIdName" placeholder={'Enter your name...'}/>
-                </label>
-                <input type="text" id="uniqueIdMessage" placeholder={'Enter message...'}/>
-                <input type="submit" value={'Send'}/>
+                <input style={styles.input} type="text" id="uniqueIdMessage" placeholder={'Enter message...'}/>
+                <button style={styles.button} className='btn btn-default' type="submit" value={'Send'}>Send</button>
             </form>
         </div>
     )
-}
-
-const mapStateToProps = state => ({
-    messages: state
-});
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onAddMessage: (username, message) => {
-            dispatch(addMessage(username, message))
-        }
-    }
 };
 
-
-const connectComponent = connect(mapDispatchToProps,mapStateToProps);
-export default connectComponent(MessageBar);
+const mapDispatchToProps = { addMessage };
+export default connect(null, mapDispatchToProps)(MessageBar);
