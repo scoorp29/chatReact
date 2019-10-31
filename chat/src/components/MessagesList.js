@@ -1,10 +1,8 @@
 import React from 'react';
 import MessageItem from "./MessageItem";
-import {connect} from "react-redux";
 import styles from './styles/MessagesStyles';
 
 const MessagesList = ({messages}) => {
-    console.log(messages);
     return (
         <ul style={styles.ul} >
             {
@@ -16,9 +14,4 @@ const MessagesList = ({messages}) => {
     )
 };
 
-const mapStateToProps = state => ({
-    messages: state.messages,
-});
-
-const connectComponent = connect(mapStateToProps);
-export default connectComponent(MessagesList);
+export default MessagesList;

@@ -1,15 +1,21 @@
 import React from 'react';
-import MessagesList from "./MessagesList";
-import MessageBar from "./MessageBar";
+import MessagesListContainer from "../container/MessagesListContainer";
+import MessageBarContainer from "../container/MessageBarContainer";
 import styles from './styles/ChatStyles';
 import Emoji from 'react-emoji-render';
+import  { Redirect } from 'react-router-dom'
 
-const Chat = () => {
+const Chat = (username) => {
+
+    if (username.username === '') {
+        return <Redirect to='/'  />;
+    }
+
     return (
         <div>
             <h1 style={styles.title}><Emoji text={"MiChat 💬"}/></h1>
-            <MessagesList/>
-            <MessageBar/>
+            <MessagesListContainer />
+            <MessageBarContainer />
         </div>
     )
 };

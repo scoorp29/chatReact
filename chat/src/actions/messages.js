@@ -1,15 +1,9 @@
 import * as types from '../constants/ActionTypes';
 
-export function addMessage(messages) {
+export function addMessage(username, messages) {
     return {
         type: types.ADD_MESSAGE,
+        username,
         messages
-    };
-}
-
-export function addUsername(username) {
-    return {
-        type: types.ADD_USERNAME,
-        username
     };
 }

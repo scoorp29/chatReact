@@ -7,7 +7,7 @@ const MessageItem = ({username, message}) => {
             <li style={styles.li}>
                 <p
                     style={styles.messageText}>{username} : <Emoji text={ message } />
-
+                    { message.length === 0 && <Emoji text="Pas de message &#x1F388;" /> }
                 </p>
             </li>
     )
