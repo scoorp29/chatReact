@@ -1,6 +1,6 @@
 import store from "../store/store";
 
-const URL = 'wss://qz6nv.sse.codesandbox.io/';
+const URL = 'wss://srrj6.sse.codesandbox.io/';
 
 const ws = new WebSocket(URL);
 
