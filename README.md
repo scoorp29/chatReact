@@ -1,4 +1,7 @@
-Projet de chat pour le cours de REACT
+[![Netlify Status](https://api.netlify.com/api/v1/badges/021218d0-f986-44cf-aa8d-3e83121ce1c0/deploy-status)](https://app.netlify.com/sites/goofy-galileo-575692/deploys) 
+
+## Netlify test link
+Link : https://goofy-galileo-575692.netlify.com/
 
 ## Init project
 ### `npm install`
